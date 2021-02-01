@@ -1,0 +1,26 @@
+<template>
+    <div style="padding:3.5rem 1rem 0">
+        <div class="slds-progress">
+            <ol class="slds-progress__list">
+                <template for:each={steps} for:item="step">
+                    <li class="slds-progress__item" data-item={step} key={step}>
+                        <button class="slds-button slds-button_icon slds-progress__marker slds-progress__marker_icon"
+                            title="Step - Completed">
+                            <lightning-icon icon-name="utility:success" size="x-small" alternative-text="View More"
+                                data-btn={step} style="display:none">
+                            </lightning-icon>
+                            <span class="slds-assistive-text">Step - Completed</span>
+                        </button>
+                    </li>
+                </template>
+            </ol>
+            <div class="slds-progress-bar slds-progress-bar_x-small" aria-valuemin="0" aria-valuemax="100"
+                aria-valuenow="50" role="progressbar">
+                <span class="slds-progress-bar__value" style="width:0%" data-type="valuesetter">
+                    <span class="slds-assistive-text">Progress: {fillPercentage}%</span>
+                </span>
+            </div>
+        </div>
+
+    </div>
+</template>
